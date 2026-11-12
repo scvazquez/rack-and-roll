@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<meta name="robots" content="noindex, nofollow">
+<title>Join a band on Rack &amp; Roll</title>
+<style>
+  :root { color-scheme: dark; }
+  body { margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center;
+         background: #0b0b0d; color: #f4f1ea; font: 16px/1.5 system-ui, -apple-system, Roboto, sans-serif; }
+  main { max-width: 360px; padding: 32px 16px; text-align: center; }
+  h1 { font-size: 26px; line-height: 1.2; margin: 0 0 8px; }
+  p { color: #b9b4aa; margin: 0 0 24px; }
+  a.btn { display: block; padding: 16px; border-radius: 999px; background: #d7ff3a; color: #0b0b0d;
+          font-weight: 700; text-decoration: none; font-size: 17px; }
+  small { display: block; margin-top: 24px; color: #8a857c; }
+  .err { color: #ff8a7a; }
+</style>
+</head>
+<body>
+<main>
+  <h1>You got invited to a band</h1>
+  <p id="msg">Tap the button to open the invite in Rack &amp; Roll.</p>
+  <a class="btn" id="open" href="#">Open in Rack &amp; Roll</a>
+  <small>Button does nothing? Use the invite code from the message. Open Rack &amp; Roll and go to Profile, Social, Bandmates, Join.</small>
+</main>
+<script>
+(function () {
+  // The invite token rides in the URL fragment, so it never reaches the web server.
+  var params = new URLSearchParams(location.hash.slice(1));
+  var token = params.get('t') || '';
+  var scheme = params.get('s') || 'ironratio';
+  var btn = document.getElementById('open');
+  if (!/^[A-Za-z0-9_-]{22}$/.test(token) || ['ironratio', 'ironratio-dev'].indexOf(scheme) < 0) {
+    var msg = document.getElementById('msg');
+    msg.textContent = 'This invite link is incomplete. Use the invite code from the message instead.';
+    msg.className = 'err';
+    btn.style.display = 'none';
+    return;
+  }
+  var path = 'bandmates/join?t=' + token;
+  var isAndroid = /Android/i.test(navigator.userAgent);
+  var href = isAndroid ? 'intent://' + path + '#Intent;scheme=' + scheme + ';end' : scheme + '://' + path;
+  btn.href = href;
+  location.href = href;
+})();
+</script>
+</body>
+</html>
