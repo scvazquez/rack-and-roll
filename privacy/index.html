@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<title>Rack &amp; Roll Privacy Policy</title>
+<style>
+  :root { color-scheme: dark; }
+  body { margin: 0; background: #0b0b0d; color: #f4f1ea; font: 16px/1.6 system-ui, -apple-system, Roboto, sans-serif; }
+  main { max-width: 680px; margin: 0 auto; padding: 32px 16px 64px; }
+  h1 { font-size: 28px; line-height: 1.2; margin: 0 0 8px; }
+  h2 { font-size: 20px; margin: 36px 0 8px; color: #d7ff3a; }
+  p, li { color: #cfcabf; }
+  p { margin: 0 0 14px; }
+  ul, ol { padding-left: 22px; margin: 0 0 14px; }
+  li { margin-bottom: 6px; }
+  a { color: #d7ff3a; }
+  .meta { color: #8a857c; margin-bottom: 24px; }
+  .note { border-left: 3px solid #d7ff3a; padding: 4px 0 4px 14px; margin: 0 0 14px; }
+  code { background: #1a1a1e; padding: 1px 5px; border-radius: 4px; }
+  table { border-collapse: collapse; width: 100%; margin: 0 0 14px; font-size: 15px; }
+  th, td { text-align: left; vertical-align: top; padding: 8px 10px 8px 0; border-bottom: 1px solid #26262b; color: #cfcabf; }
+  th { color: #f4f1ea; }
+</style>
+</head>
+<body>
+<main>
+<h1>Rack &amp; Roll Privacy Policy</h1>
+<p class="meta">Effective date: 2026-11-20</p>
+
+<p>Rack &amp; Roll is a workout log with opinions. This page explains what the app does with your data. Short version: we do not sell it, we show no ads, and you can delete it all from inside the app.</p>
+
+<h2>Who we are</h2>
+<p>Rack &amp; Roll (Android package <code>com.rackandroll.app</code>) is built and run by an independent developer. Questions or requests: <a href="mailto:scvazquez@gmail.com">scvazquez@gmail.com</a>.</p>
+
+<h2>Works without an account</h2>
+<p>You can use the app without signing in. Your workouts, plans and settings are then stored only on your phone. Signing in is optional. It turns on cloud sync and backup, Bandmates, the AI coach, and server-side body-scan import.</p>
+
+<h2>What we collect</h2>
+<table>
+<tr><th>Data</th><th>When</th></tr>
+<tr><td>Account details: email address, name and a user ID, from Google sign-in</td><td>Only if you sign in. Sign-in runs through Google and Supabase Auth. We never see your Google password.</td></tr>
+<tr><td>Fitness data: workouts, sets, plans, exercise stats, notes, bodyweight log, settings</td><td>Stored on your phone. Copied to our cloud database (Supabase) if you sign in.</td></tr>
+<tr><td>Health Connect data (details below)</td><td>Only if you grant permission in Android.</td></tr>
+<tr><td>Body-composition scan photos or PDFs</td><td>Only when you use scan import. You pick a photo (camera or gallery) or a PDF report.</td></tr>
+<tr><td>Coach requests: your questions, and the training and health context the coach needs to answer</td><td>Only when you use the AI coach or saved fitness context.</td></tr>
+<tr><td>Bandmates profile: alias, avatar, workout and streak contributions, and wager text</td><td>Only if you join or create a band. Visible to the other members of that band.</td></tr>
+<tr><td>WHOOP or Oura data (recovery, cycle, sleep, daily readiness) and the connection tokens</td><td>Only if you connect one of those accounts.</td></tr>
+<tr><td>Device push token and notification permission state</td><td>Only if you use Bandmates and allow notifications. Used to send band notifications through the Expo push service.</td></tr>
+</table>
+<p>We do not collect your location, contacts, calendar, messages or microphone audio.</p>
+
+<h2>Health Connect</h2>
+<p>If you allow it, Rack &amp; Roll reads these Health Connect data types: weight, steps, resting heart rate, heart rate variability, sleep, active calories burned, total calories burned, body fat, and lean body mass. It can also write one data type back: exercise sessions (your finished workouts), if you use that export.</p>
+<p>We use this data only for features you can see in the app: keeping bodyweight and strength ratios current, readiness and recovery estimates, body-composition trends, daily activity next to training load, and coach answers about your recovery. Health Connect permissions are optional. You can revoke them any time in Android system settings, and the app keeps working without them.</p>
+<p>If you are signed in, Health Connect values the app stores are synced to our cloud database like your other fitness data, and summaries may be included in coach requests (see below).</p>
+<p class="note">Rack &amp; Roll's use and transfer to any other app of information received from Health Connect will adhere to the <a href="https://developer.android.com/health-and-fitness/health-connect/health-connect-privacy-policy">Health Connect Permissions policy</a>, including the Limited Use requirements. We do not sell Health Connect data, we do not use it for advertising (including personalized or retargeted ads), and we do not transfer it to data brokers or information resellers. We use it only to provide and improve the user-facing features above. Humans do not read it unless you consent for a specific item, it is needed to investigate abuse, the law requires it, or it is aggregated and anonymized.</p>
+
+<h2>Why we use your data</h2>
+<ul>
+<li>To run the app: log workouts, calculate strength ratios and readiness, show progress.</li>
+<li>To back up and sync your data across devices, when you sign in.</li>
+<li>To answer coach questions and read your body-scan reports, when you ask.</li>
+<li>To run Bandmates, so friends in a band see each other's streaks and agreed wagers. Wagers are bragging rights and favors. No money moves through the app.</li>
+<li>To let you delete your data.</li>
+</ul>
+
+<h2>Who receives it</h2>
+<ul>
+<li><strong>Supabase</strong> hosts our database, file storage and sign-in, and runs our server functions. It stores synced data and acts for us as a processor.</li>
+<li><strong>Google Gemini API.</strong> When you use the AI coach, saved fitness context, or body-scan import, the relevant text, summaries, photo or PDF are sent from our server to Google's Gemini API to produce the answer. Google processes them under its Gemini API terms. Body-scan requests ask Google not to store the interaction. We do not control Google's retention or use of API data under its terms, so do not send the coach anything you would not want Google to process.</li>
+<li><strong>Google sign-in</strong> authenticates you if you choose to sign in.</li>
+<li><strong>WHOOP and Oura</strong> send us your data only if you connect them. Their access tokens are kept on our server, not in the app.</li>
+<li><strong>Other Bandmates members</strong> see your alias, avatar, contributions and wager text for bands you are in.</li>
+<li><strong>Expo</strong>, the app framework, delivers app updates and band push notifications. It receives your push token for notifications, and standard request information such as app version and device type for updates.</li>
+</ul>
+<p>We may disclose data if the law requires it.</p>
+
+<h2>What we do not do</h2>
+<ul>
+<li>No ads and no ad SDKs.</li>
+<li>No sale of your data.</li>
+<li>No analytics or crash-reporting SDKs. This page has no trackers either.</li>
+</ul>
+
+<h2>Security</h2>
+<p>Data travels between the app and our servers over HTTPS. Database rules restrict access to synced data to your own account.</p>
+
+<h2>How long we keep it</h2>
+<ul>
+<li>On your phone: until you delete it in the app or uninstall.</li>
+<li>In the cloud: until you delete your account. We set no automatic expiry on synced workout data.</li>
+<li>Body-scan uploads: stored temporarily so they can be read, then removed. Unfinished uploads expire after 24 hours.</li>
+<li>Deletion receipts (a record that your deletion ran, with no workout content) are cleared after about 30 days.</li>
+</ul>
+
+<h2>Deleting your data</h2>
+<p>In the app, tap the gear icon (Settings) on the Plans, Progress or Coach screen, or tap your avatar on Home. Scroll to the bottom and tap <strong>Delete my data</strong>, confirm, then choose <strong>Delete cloud account and data</strong>. Details, and an email option if you cannot open the app, are on the <a href="../delete-account/">account deletion page</a>.</p>
+<p>Your Health Connect data lives in Android's Health Connect, not with us. Manage or delete it there.</p>
+
+<h2>Children</h2>
+<p>Rack &amp; Roll is for adults. It is not meant for anyone under 18, and we do not knowingly collect data from children. If you think a child has an account, email us and we will delete it.</p>
+
+<h2>Your choices</h2>
+<p>You can use the app without an account, skip any Health Connect permission, skip the coach and body scans, disconnect WHOOP or Oura, and leave a band. To ask what we hold about you, or to correct or delete it, email <a href="mailto:scvazquez@gmail.com">scvazquez@gmail.com</a>.</p>
+
+<h2>Not medical advice</h2>
+<p>The app and the coach are not a medical device and give no medical advice. Check with a doctor before starting a new program.</p>
+
+<h2>Changes</h2>
+<p>If we change this policy we will update this page and the effective date above. For material changes we will also say so in the app.</p>
+
+<h2>Contact</h2>
+<p><a href="mailto:scvazquez@gmail.com">scvazquez@gmail.com</a></p>
+</main>
+</body>
+</html>
